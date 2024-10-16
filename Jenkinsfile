@@ -1,7 +1,6 @@
 //git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main'
       
 pipeline {
-    agent { label 'docker-enabled-node' }  // Make sure to use the node with Docker
     stages {
         stage('Clone Repository') {
             steps {

@@ -4,7 +4,9 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the Git repository
-                git 'https://github.com/Saumil-97/sam-mca-demo.git'
+                //git 'https://github.com/Saumil-97/sam-mca-demo.git'
+                git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main', credentialsId: 'ee28ddad-2bfe-409a-b054-a5d28a3b71e3'
+
             }
         }
         stage('Install Python') {

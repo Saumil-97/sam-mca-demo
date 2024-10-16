@@ -3,37 +3,20 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone the Git repository
-                //git 'https://github.com/Saumil-97/sam-mca-demo.git'
-                git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main', credentialsId: 'ee28ddad-2bfe-409a-b054-a5d28a3b71e3'
-
+                git url: 'https://github.com/your-username/your-repo.git', branch: 'main'
             }
         }
         stage('Install Python') {
             steps {
-                // Install Python dependencies if needed
+                // Install Python in the pipeline
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install -y python3'
                 sh 'python3 --version'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
             }
         }
         stage('Run Python Script') {
             steps {
-                // Run the Python script
                 sh 'python3 hello.py'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
             }
         }
     }

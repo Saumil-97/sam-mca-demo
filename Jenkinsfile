@@ -1,16 +1,16 @@
+//git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main'
+      
 pipeline {
-    agent {
-        docker { image 'python:3.8' }  // Use a Python Docker image
-    }
+    agent { label 'docker-enabled-node' }  // Make sure to use the node with Docker
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main'
+                git url: 'git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main''
             }
         }
-        stage('Run Python Script') {
+        stage('Run Python Script in Docker') {
             steps {
-                sh 'python hello.py'  // Python is already available in this image
+                sh 'docker run --rm -v $(pwd):/app -w /app python:3.8 python hello.py'
             }
         }
     }

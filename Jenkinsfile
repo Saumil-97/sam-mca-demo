@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_ENV = "/usr/bin/python3"  // Adjust this to your Python path if needed
+        PYTHON_ENV = "/usr/local/bin/python3"  // Update to the correct Python path
     }
     stages {
         stage('Build') {

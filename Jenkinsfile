@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main''
+                git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main'
             }
         }
         stage('Run Python Script in Docker') {

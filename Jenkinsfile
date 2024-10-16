@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_ENV = "\Users\SAUMIL PEWEKAR\AppData\Local\Microsoft\WindowsApps\python.exe"  // Update to the correct Python path
+        PYTHON_ENV = "/usr/bin/python3"  // Adjust this to your Python path if needed
     }
     stages {
         stage('Build') {
@@ -24,3 +24,4 @@ pipeline {
         }
     }
 }
+

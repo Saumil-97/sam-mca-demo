@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_ENV = "C:\Program Files\Python312\python.exe"  // Update to the correct Python path
+        PYTHON_ENV = "\Users\SAUMIL PEWEKAR\AppData\Local\Microsoft\WindowsApps\python.exe"  // Update to the correct Python path
     }
     stages {
         stage('Build') {

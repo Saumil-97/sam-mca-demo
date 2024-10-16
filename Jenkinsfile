@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Run Python Script in Docker') {
             steps {
-                sh 'docker run --rm -v $(pwd):/app -w /app python:3.8 python hello.py'
+                sh 'docker run --rm -v $(pwd):/app -w /app python python hello.py'
             }
         }
     }

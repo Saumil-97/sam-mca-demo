@@ -2,11 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Test Git Access') {
+        stage('Clone Repository') {
             steps {
-                script {
-                    sh 'git ls-remote https://github.com/Saumil-97/sam-mca-demo.git'
-                }
+                // Ensure you're using the correct branch name
+                git url: 'https://github.com/Saumil-97/sam-mca-demo.git', branch: 'main' // Change 'main' to your default branch if necessary
+            }
+        }
+        stage('Run Python Script') {
+            steps {
+                // Run your script here
+                sh 'python hello.py' // Adjust according to your script location and name
             }
         }
     }

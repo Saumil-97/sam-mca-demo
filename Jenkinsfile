@@ -2,20 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Setup') {
+        stage('Clone Repository') {
             steps {
-                script {
-                    sh 'python -m venv venv' // Create a virtual environment
-                    sh '. venv/bin/activate'  // Activate it (or use venv\Scripts\activate on Windows)
-                    sh 'pip install -r requirements.txt' // Install dependencies
-                }
+                // Clone the GitHub repository
+                git url: 'https://github.com/Saumil - 97/sam-mca-demo.git'
             }
         }
         stage('Run Python Script') {
             steps {
-                script {
-                    sh '. venv/bin/activate && python D:/MCA/hello.py' // Run your script
-                }
+                // Run the hello.py script
+                sh 'python hello.py' // Use 'python3' if needed
             }
         }
     }

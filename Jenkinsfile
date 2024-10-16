@@ -1,27 +1,17 @@
 pipeline {
     agent any
+
     environment {
-        PYTHON_ENV = "D:/MCA/hello.py"  // Adjust this to your Python path if needed
+        PYTHON_ENV = "D:\\MCA\\hello.py"  // or use "D:/MCA/hello.py"
     }
+
     stages {
-        stage('Build') {
+        stage('Run Python Script') {
             steps {
-                echo 'Building...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
                 script {
-                    sh "${PYTHON_ENV} hello.py"
+                    sh "python ${PYTHON_ENV}"
                 }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
             }
         }
     }
 }
-

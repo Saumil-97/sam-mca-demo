@@ -1,17 +1,19 @@
 pipeline {
     agent any
-
     stages {
-        stage('Setup Virtual Environment') {
+        stage('Build') {
             steps {
-                sh 'python -m venv venv' // Create virtual environment
-                sh '. venv/bin/activate' // Activate it (use venv\Scripts\activate on Windows)
-                sh 'pip install -r requirements.txt' // Install dependencies if needed
+                echo 'Building...'
             }
         }
-        stage('Run Python Script') {
+        stage('Test') {
             steps {
-                sh '. venv/bin/activate && python hello.py' // Run your script
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }

@@ -4,7 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the Git repository
-                git 'https://github.com/your-repo/your-python-hello-world.git'
+                git 'https://github.com/Saumil-97/sam-mca-demo.git'
             }
         }
         stage('Install Python') {
